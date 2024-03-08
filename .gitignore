@@ -1,3 +1,6 @@
+# Ignorar el entorno actual.
+CRUD-env-dev/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
