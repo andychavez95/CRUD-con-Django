@@ -1,3 +1,6 @@
+# Ignorar carpeta migrations
+migrations/
+
 # Ignorar el entorno actual.
 CRUD-env-dev/
 
