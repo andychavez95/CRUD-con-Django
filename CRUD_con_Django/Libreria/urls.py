@@ -6,5 +6,6 @@ urlpatterns = [
     path('', start, name='start'),
     path('nosotros/', us, name='us'),
     path('libros/', list_books, name='list_books'),
-    path('libros/crear/', create_book, name='create_book')
+    path('libros/crear/', create_book, name='create_book'),
+    path('libros/editar/', edit_book, name='edit_book')
 ]
