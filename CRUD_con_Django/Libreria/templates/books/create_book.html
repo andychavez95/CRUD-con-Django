@@ -1,5 +1,15 @@
 {% extends "base.html" %}
 {% block title %} Crear un libro {% endblock %}
 {% block content %}
-Formulario para crear libros.
+<div class="card">
+    <div class="card-header">
+        Crear libro
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Datos del libro:</h4>
+        <!-- Incluir el formulario -->
+        {% include 'books/forms.html' %}
+    </div>
+</div>
+
 {% endblock %}
