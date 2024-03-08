@@ -16,3 +16,6 @@ def list_books(request):
 
 def create_book(request):
     return render(request, 'books/create_book.html')
+
+def edit_book(request):
+    return render(request, 'books/edit_book.html')
