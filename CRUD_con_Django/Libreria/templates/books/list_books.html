@@ -10,7 +10,7 @@
     <div class="card-body">
         <h4 class="card-title">Libros</h4>
         <div class="table-responsive">
-            <table class="table table-primary">
+            <table class="table">
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
@@ -21,16 +21,25 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="">
-                        <td scope="row">ID del libro</td>
-                        <td>Título del libro</td>
-                        <td>Imagen del libro</td>
-                        <td>Descripción del libro</td>
-                        <td>
-                            <a name="" id="" class="btn btn-info" href="{% url 'edit_book' %}" role="button">Editar</a>
-                            <a name="" id="" class="btn btn-danger" href="#" role="button">Borrar</a>
-                        </td>
-                    </tr>
+                    {% if books|length > 0 %}
+                        {% for book in books %}
+                        <tr class="">
+                            <td>{{ book.id }}</td>
+                            <td>{{ book.title }}</td>
+                            <td>
+                                <img src="{{ book.image.url }}" alt="" height="100">
+                                <!-- {{ book.image }} -->
+                            </td>
+                            <td>{{ book.description }}</td>
+                            <td>
+                                <a name="" id="" class="btn btn-info" href="{% url 'edit_book' %}" role="button">Editar</a>
+                                <a name="" id="" class="btn btn-danger" href="#" role="button">Borrar</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    {% else %}
+                    <p>No hay información a mostrar</p>
+                    {% endif %}
                 </tbody>
             </table>
         </div>
