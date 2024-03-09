@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from Libreria.models import Books
-from Libreria.forms import BooksForm
+from Libreria.modelsforms import BookForm
 
 def start(request):
     return render(request, 'index.html')
@@ -17,7 +17,7 @@ def list_books(request):
 
 
 def create_book(request):
-    books_form = BooksForm(request.POST or None, request.FILES or None)
+    books_form = BookForm(request.POST or None, request.FILES or None)
     if books_form.is_valid() and request.POST:
         books_form.save()
         return redirect(list_books)
@@ -26,7 +26,7 @@ def create_book(request):
 
 def edit_book(request, book_id):
     book = Books.objects.get(id=book_id)
-    books_form = BooksForm(request.POST or None, 
+    books_form = BookForm(request.POST or None, 
                            request.FILES or None, 
                            instance=book)
     
